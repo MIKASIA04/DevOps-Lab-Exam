@@ -1,0 +1,23 @@
+name: Basic Build Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Display build message
+        run: echo "Project build started successfully"
+
+      - name: Verify project file
+        run: test -f index.html
+
+      - name: Build completed
+        run: echo "Project built successfully!"
